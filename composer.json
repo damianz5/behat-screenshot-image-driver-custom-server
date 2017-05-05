@@ -1,0 +1,47 @@
+{
+    "name": "damianz5/behat-screenshot-image-driver-custom-server",
+    "type": "library",
+    "description": "Custom Server image driver for bex/behat-screenshot behat extension",
+    "keywords": ["tdd","bdd","behat", "behat-screenshot", "custom-server"],
+    "homepage": "https://github.com/damianz5/behat-screenshot-image-driver-custom-server",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Damian Zabawa",
+            "email": "damian.zabawa@gmail.com",
+            "homepage": "https://github.com/damianz5",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "symfony/options-resolver": "^2.8|^3.0",
+        "bex/behat-screenshot": "^1.2",
+        "kriswallsmith/buzz": "^0.15.0"
+    },
+    "require-dev": {
+        "phpspec/phpspec" : "^2.4.0",
+        "bex/behat-test-runner": "^1.1",
+        "jakoch/phantomjs-installer": "^1.9.8",
+        "behat/mink-selenium2-driver": "^1.3.0"
+    },
+    "config": {
+        "bin-dir": "bin",
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Bex\\Behat\\ScreenshotExtension\\Driver\\": "src"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    }
+}
